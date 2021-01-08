@@ -31,9 +31,9 @@ exports.up = async function(knex) {
 
     await knex.schema.createTable("recipies_ingredients", (table)=> {
         table
-              .integer("recipies_id")
+              .integer("rec_id")
                   .references("id")
-                  .inTable("recipies")
+                  .inTable("rec")
                   .onDelete("CASCADE")
                   .onUpdate("CASCADE")
                   .notNull()
@@ -54,7 +54,7 @@ exports.up = async function(knex) {
                   .onUpdate("CASCADE")
                   .notNull()
                          
-          table.primary(["recipies_id", "ingredients_id"])
+          table.primary(["rec_id", "ingredients_id"])
   
   
     })
