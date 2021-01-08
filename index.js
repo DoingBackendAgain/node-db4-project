@@ -1,13 +1,12 @@
 const express = require("express")
-//const rR = require("./data/routers/recipeRouter")
-//const iR = require("./data/routers/ingredientsRouter")
+const rR = require("./router/recipieRouter")
 
 const server = express()
 
 server.use(express.json())
 
-// server.use("/recipies", rR)
-// server.use("/ingredients", iR)
+server.use("/recipies", rR)
+
 
 const port = 9000;
 
